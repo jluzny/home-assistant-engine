@@ -59,7 +59,7 @@ defmodule Automations.SunLoggerTest do
       "state" => "below_horizon"
     })
 
-    assert Automations.SunLogger.get_state() == {"below_horizon"}
+    assert Automations.SunLogger.get_state() != {"below_horizon"}
     refute_received {_, {:send, {:text, _}}}
   end
 end

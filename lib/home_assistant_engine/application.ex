@@ -5,11 +5,10 @@ defmodule HomeAssistantEngine.Application do
 
   use Application
 
-  @impl true
   def start(_type, automations) do
     client = [
       # Starts a worker by calling: HomeAssistantEngine.Worker.start_link(arg)
-      {HomeAssistantEngine, {"ws://127.0.0.1:8123/api/websocket", automations}}
+      {HomeAssistantEngine, {"ws://192.168.0.204:8123/api/websocket", automations}}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
